@@ -1,0 +1,22 @@
+{
+  "name": "mowitnow",
+  "version": "0.1.0",
+  "author": "Vincent Viaud",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "jshint-stylish": "^0.2.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.2",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-cli": "^1.10.0"
+  },
+  "preferGlobal": "true",
+  "main" : "lib/mowitnow.js",
+  "bin" : { "mowit" : "./bin/mowit.js" },
+  "scripts": {
+    "test": "grunt"
+  }
+}
