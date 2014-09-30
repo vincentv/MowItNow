@@ -2,8 +2,8 @@
 'use strict';
 var assert = require('assert');
 
-var PubSub      = require('../lib/vendor/publish.js'),
-    MowItNow    = require('../lib/mowitnow.js');
+var PubSub      = require('../lib/vendor/publish'),
+    MowItNow    = require('../lib/mowitnow');
 
 var fixtures = {
     data: ["5 5", "1 2 N", "GAGAGAGAA", "3 3 E", "AADAADADDA"],

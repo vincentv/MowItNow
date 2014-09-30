@@ -3,10 +3,10 @@
 
 var assert = require('assert');
 
-var Coordinate  = require('../lib/coordinate.js'),
-    Position    = require('../lib/position.js'),
-    Zone        = require('../lib/zone.js'),
-    Mower       = require('../lib/mower.js');
+var Coordinate  = require('../lib/coordinate'),
+    Position    = require('../lib/position'),
+    Zone        = require('../lib/zone'),
+    Mower       = require('../lib/mower');
 
 var fixtures = [
     { ori:{x:1,y:2,dir:'N'}, des:{x:1,y:3,dir:'N'}, cmd:'GAGAGAGAA' },

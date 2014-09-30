@@ -6,7 +6,7 @@ var os = require('os'),
     fs = require('fs');
 
 
-var PubSub          = require('../lib/vendor/publish.js'),
+var PubSub          = require('../lib/vendor/publish'),
     xebiaTondeuse   = require('../lib/mowitnow');
 
 var userArgs = process.argv;

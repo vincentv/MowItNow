@@ -3,8 +3,8 @@
 
 var assert = require('assert');
 
-var Coordinate  = require('../lib/coordinate.js'),
-    Position    = require('../lib/position.js');
+var Coordinate  = require('../lib/coordinate'),
+    Position    = require('../lib/position');
 
 
 describe('Position', function() {
