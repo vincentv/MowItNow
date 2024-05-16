@@ -1,22 +1,40 @@
 {
   "name": "mowitnow",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Vincent Viaud",
   "license": "MIT",
+  "private": true,
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "jshint-stylish": "^0.2.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.2",
-    "grunt-contrib-nodeunit": "^0.3.3",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-mocha-cli": "^1.10.0"
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.9.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-oxlint": "^0.2.9",
+    "oxlint": "^0.3.4",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   },
-  "preferGlobal": "true",
-  "main" : "lib/mowitnow.js",
-  "bin" : { "mowit" : "./bin/mowit.js" },
+  "main": "lib/index.js",
+  "bin": {
+    "mowit": "./bin/mowit.js"
+  },
+  "type": "module",
+  "files": [
+    "bin/",
+    "lib/",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=20.12.2"
+  },
   "scripts": {
-    "test": "grunt"
+    "build": "tsc -b tsconfig.build.json --clean && tsc -b tsconfig.build.json",
+    "format": "prettier -w ./",
+    "lint": "tsc --noEmit && oxlint -c ./.eslintrc.json --import-plugin -D all -A no-ternary -A no-array-reduce -A prefer-spread -A prefer-add-event-listener -A no-array-for-each ./ && eslint ./",
+    "lint:fix": "tsc --noEmit && oxlint -c ./.eslintrc.json --import-plugin -D all -A no-ternary -A no-array-reduce -A prefer-spread -A prefer-add-event-listener -A no-array-for-each --fix ./ && eslint --fix ./",
+    "test": "vitest"
   }
 }

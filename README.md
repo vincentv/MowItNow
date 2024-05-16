@@ -1,10 +1,9 @@
-MowItNow
-===============
+# MowItNow
 
 La société MowItNow a décidé de développer une tondeuse à gazon automatique, destinée aux surfaces rectangulaires.
 
 La tondeuse peut être programmée pour parcourir l'intégralité de la surface.
-La position de la tondeuse est représentée par une combinaison de coordonnées (x,y) et d'une lettre indiquant l'orientation selon la notation cardinale anglaise (N,E,W,S). La pelouse est divisée en grille pour simplifier la navigation. 
+La position de la tondeuse est représentée par une combinaison de coordonnées (x,y) et d'une lettre indiquant l'orientation selon la notation cardinale anglaise (N,E,W,S). La pelouse est divisée en grille pour simplifier la navigation.
 
 Par exemple, la position de la tondeuse peut être « 0, 0, N », ce qui signifie qu'elle se situe dans le coin inférieur gauche de la pelouse, et orientée vers le Nord.
 
@@ -14,21 +13,21 @@ Si la position après mouvement est en dehors de la pelouse, la tondeuse ne boug
 On assume que la case directement au Nord de la position (x, y) a pour coordonnées (x, y+1).
 
 Pour programmer la tondeuse, on lui fournit un fichier d'entrée construit comme suit :
-* La première ligne correspond aux coordonnées du coin supérieur droit de la pelouse, celles du coin inférieur gauche sont supposées être (0,0)
-* La suite du fichier permet de piloter toutes les tondeuses qui ont été déployées. Chaque tondeuse a deux lignes la concernant :
-  * la première ligne donne la position initiale de la tondeuse, ainsi que son orientation. La position et l'orientation sont fournies sous la forme de 2 chiffres et une lettre, séparés par un espace
-  * la seconde ligne est une série d'instructions ordonnant à la tondeuse d'explorer la pelouse. Les instructions sont une suite de caractères sans espaces.
+
+- La première ligne correspond aux coordonnées du coin supérieur droit de la pelouse, celles du coin inférieur gauche sont supposées être (0,0)
+- La suite du fichier permet de piloter toutes les tondeuses qui ont été déployées. Chaque tondeuse a deux lignes la concernant :
+  - la première ligne donne la position initiale de la tondeuse, ainsi que son orientation. La position et l'orientation sont fournies sous la forme de 2 chiffres et une lettre, séparés par un espace
+  - la seconde ligne est une série d'instructions ordonnant à la tondeuse d'explorer la pelouse. Les instructions sont une suite de caractères sans espaces.
 
 Chaque tondeuse se déplace de façon séquentielle, ce qui signifie que la seconde tondeuse ne bouge que lorsque la première a exécuté intégralement sa série d'instructions.
 
 Lorsqu'une tondeuse achève une série d'instruction, elle communique sa position et son orientation.
 
-Objectif
----------------
+## Objectif
+
 Concevoir et écrire un programme s'exécutant sur une JVM ≥ 1.7, un navigateur web ou un serveur node.js, et implémentant la spécification ci-dessus et passant le test ci-après
 
-Test
----------------
+## Test
 
 Le fichier suivant est fourni en entrée :
 
@@ -44,3 +43,10 @@ On attend le résultat suivant (position finale des tondeuses) :
     5 1 E
 
 NB: Les données en entrée peuvent être injectée sous une autre forme qu'un fichier (par exemple un test automatisé).
+
+## Commandes disponibles
+
+- `pnpm run lint[:fix]`: effectue une analyse du code pour détecter d'éventuels problèmes et vérifie le style.
+- `pnpm run test`: exécute la suite de tests.
+- `pnpm run build`: transpile le projet en JavaScript.
+- `pnpm exec mowit <fichier_d_instructions>`: Exécute le projet avec les instructions fournies dans le fichier spécifié.
